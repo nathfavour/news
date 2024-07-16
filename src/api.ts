@@ -40,7 +40,7 @@ const routerAdmin = buildAuthenticatedRouter(
   );
 
 
-router.use(admin.options.rootPath, router);
+router.use(admin.options.rootPath, routerAdmin);
 
 
 
