@@ -10,8 +10,8 @@ import cards from '@components/cards/cards.router';
 
 import { buildAuthenticatedRouter } from '@adminjs/express';
 import AdminJS from 'adminjs';
-import provider from './admin/auth-provider.js';
-import options from './admin/options.js';
+import provider from './components/admin/auth-provider.js';
+import options from '.components/admin/options.js';
 
 
 const admin = new AdminJS(options);
