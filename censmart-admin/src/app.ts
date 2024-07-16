@@ -36,6 +36,7 @@ const start = async () => {
     },
   );
 
+  
   app.use(admin.options.rootPath, router);
 
   app.listen(port, () => {
