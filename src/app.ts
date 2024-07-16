@@ -12,9 +12,40 @@ import http404 from '@components/404/404.router';
 import swaggerApiDocs from '@components/swagger-ui/swagger.router';
 import db from '@db';
 
-db.connect();
+import AdminJS from 'adminjs';
+import options from './components/admin/options.js'
+
+
+// db.connect();
 
 const app: Application = express();
+
+
+// const admin = new AdminJS(options);
+// if (process.env.NODE_ENV === 'production') {
+//     await admin.initialize();
+//   } else {
+//     admin.watch();
+//   }
+
+
+
+// Wrap DB connection and AdminJS initialization in an async function
+async function initializeApp() {
+  await db.connect();
+
+  const admin = new AdminJS(options);
+  if (process.env.NODE_ENV === 'production') {
+    await admin.initialize();
+  } else {
+    admin.watch();
+  }
+}
+
+initializeApp().catch(console.error);
+
+
+
 
 app.use(lusca.xssProtection(true));
 app.use(expressMongoSanitize());
