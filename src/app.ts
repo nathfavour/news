@@ -13,7 +13,7 @@ import swaggerApiDocs from '@components/swagger-ui/swagger.router';
 import db from '@db';
 
 import AdminJS from 'adminjs';
-import options from './components/admin/options.js'
+import options from './components/admin/options.js';
 
 
 // db.connect();
