@@ -2,9 +2,9 @@
 
   "include": [
     "src/**/*",
-    "types/**/*"
+    // "types/**/*"
   ],
-  
+
   "compilerOptions": {
 
     "target": "es2017",
